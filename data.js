@@ -24,7 +24,7 @@ document.querySelector(".tombol").addEventListener('click', function () {
           showCancelButton: true,
           inputValidator: (value) => {
             if (!value) {
-              return 'Tolong masukkan nama dulu'
+              return 'Masukkan nama anda terlebih dahulu'
             } else {
               nama = value;
             }
@@ -39,7 +39,7 @@ document.querySelector(".tombol").addEventListener('click', function () {
           }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-              Swal.fire(`${sender} juga sayang dengan ${nama}`).then(function () {
+              Swal.fire(`${sender} juga menyayangi ${nama}`).then(function () {
                 Swal.fire({
                   title: 'Seberapa besar sayangmu?',
                   icon: 'question',
@@ -55,7 +55,7 @@ document.querySelector(".tombol").addEventListener('click', function () {
                   val = e.value
                   Swal.fire(`Terimakasih sudah menyayangi ${sender} ${val}%`).then(function () {
                     Swal.fire({
-                      title: `APakah ${nama} merindukan ${sender}?`,
+                      title: `Apakah ${nama} merindukan ${sender}?`,
                       showDenyButton: true,
                       showCancelButton: false,
                       confirmButtonText: `Ya`,
@@ -63,8 +63,8 @@ document.querySelector(".tombol").addEventListener('click', function () {
                     }).then((result) => {
                       /* Read more about isConfirmed, isDenied below */
                       if (result.isConfirmed) {
-                        Swal.fire(`${sender} juga rindu dengan ${nama}`).then(function () {
-                          Swal.fire('Terakhir deh sayang').then(function () {
+                        Swal.fire(`${sender} juga merindukan ${nama}`).then(function () {
+                          Swal.fire('Last but not least').then(function () {
                             Swal.fire('Coba klik ikon hati di bawah')
                           })
                         })
